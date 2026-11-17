@@ -5,78 +5,558 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HUANGUELÉN DONA VIDA ❤️</title>
 
-<!-- SECCIÓN: CONOCÉ NUESTRA COMUNIDAD -->
-<section class="comunidad" id="comunidad">
 
-    <div class="comunidad-contenido">
+<!-- =====================================
+     SECCIÓN COMUNIDAD - HUANGUELÉN DONA VIDA
+===================================== -->
 
-        <span class="comunidad-etiqueta">HUANGUELÉN DONA VIDA</span>
+<section id="comunidad" class="comunidad">
 
-        <h2>Conectate con nosotros ❤️</h2>
+<style>
+.comunidad {
+    padding: 85px 6%;
+    background: linear-gradient(135deg, #fff1f3, #fff, #ffe5eb);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #702039;
+}
 
-        <p class="comunidad-descripcion">
-            Informate, compartí y ayudanos a difundir la importancia
-            de la donación de sangre y células progenitoras hematopoyéticas.
-        </p>
+.comunidad * {
+    box-sizing: border-box;
+}
 
-        <div class="comunidad-elementos">
+.comunidad-contenedor {
+    max-width: 1150px;
+    margin: auto;
+}
 
-            <!-- LOGO -->
-            <div class="comunidad-card">
-                <div class="comunidad-circulo logo-circulo">
-                    <img src="assets/logo.png" alt="Logo Huanguelén Dona Vida">
+.comunidad-etiqueta {
+    display: inline-block;
+    background: #ffe0e7;
+    color: #a7193c;
+    padding: 9px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.comunidad h2 {
+    font-size: clamp(30px, 5vw, 44px);
+    color: #a7193c;
+    margin: 20px 0 12px;
+}
+
+.comunidad-intro {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    line-height: 1.8;
+    color: #76646a;
+}
+
+.comunidad-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.comunidad-tarjeta {
+    background: white;
+    padding: 32px 22px;
+    border: 1px solid #f3d0d9;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(140, 20, 50, .08);
+    transition: .3s;
+}
+
+.comunidad-tarjeta:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(140, 20, 50, .15);
+}
+
+.comunidad-circulo {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 7px 20px #0002;
+    text-decoration: none;
+}
+
+.comunidad-logo {
+    background: #fff0f3;
+}
+
+.comunidad-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.comunidad-instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: white;
+    font-size: 48px;
+}
+
+.comunidad-robot {
+    background: linear-gradient(135deg, #a7193c, #ed7890);
+    font-size: 48px;
+}
+
+.comunidad-tarjeta h3 {
+    color: #a7193c;
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.comunidad-tarjeta p {
+    color: #76646a;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 45px;
+}
+
+.comunidad-boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #a7193c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.comunidad-boton:hover {
+    background: #75112c;
+}
+
+/* CHAT */
+
+.comunidad-chat {
+    margin-top: 20px;
+    border: 1px solid #f0ccd5;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: left;
+    background: white;
+    display: none;
+}
+
+.comunidad-chat.abierto {
+    display: block;
+}
+
+.comunidad-chat-cabecera {
+    background: linear-gradient(135deg, #a7193c, #df5975);
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comunidad-chat-cabecera strong {
+    display: block;
+}
+
+.comunidad-chat-cabecera small {
+    display: block;
+    margin-top: 5px;
+    color: #ffe6eb;
+}
+
+.comunidad-chat-cabecera button {
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.comunidad-chat-mensajes {
+    height: 250px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #fff8fa;
+}
+
+.comunidad-mensaje {
+    max-width: 90%;
+    padding: 12px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.comunidad-mensaje.bot {
+    background: #fce5eb;
+    color: #702039;
+}
+
+.comunidad-mensaje.usuario {
+    background: #a7193c;
+    color: white;
+    margin-left: auto;
+}
+
+.comunidad-preguntas {
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.comunidad-preguntas button {
+    background: #fff3f6;
+    color: #a7193c;
+    border: 1px solid #efc4cf;
+    border-radius: 20px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.comunidad-preguntas button:hover {
+    background: #f9dce4;
+}
+
+.comunidad-chat-form {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid #f4dce2;
+}
+
+.comunidad-chat-form input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #edcbd3;
+    border-radius: 25px;
+    padding: 12px;
+    outline: none;
+}
+
+.comunidad-chat-form input:focus {
+    border-color: #a7193c;
+}
+
+.comunidad-chat-form button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background: #a7193c;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.comunidad-final {
+    margin-top: 45px;
+    padding: 28px;
+    background: white;
+    border: 1px solid #f3d0d9;
+    border-radius: 22px;
+}
+
+.comunidad-final h3 {
+    color: #a7193c;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.comunidad-final p {
+    color: #76646a;
+    margin: 0;
+}
+
+@media(max-width: 850px) {
+    .comunidad-tarjetas {
+        grid-template-columns: 1fr;
+        max-width: 470px;
+        margin: auto;
+    }
+
+    .comunidad {
+        padding: 60px 5%;
+    }
+}
+</style>
+
+<div class="comunidad-contenedor">
+
+    <span class="comunidad-etiqueta">
+        NUESTRA COMUNIDAD
+    </span>
+
+    <h2>Conectate con nosotros ❤️</h2>
+
+    <p class="comunidad-intro">
+        Somos parte de una comunidad que cree en la solidaridad.
+        Conocé nuestro proyecto, seguinos en las redes y consultá
+        tus dudas con nuestro asistente virtual.
+    </p>
+
+    <div class="comunidad-tarjetas">
+
+        <!-- LOGO -->
+        <article class="comunidad-tarjeta">
+
+            <div class="comunidad-circulo comunidad-logo">
+                <img src="assets/logo.png" alt="Logo Huanguelén Dona Vida">
+            </div>
+
+            <h3>Huanguelén Dona Vida</h3>
+
+            <p>
+                Un proyecto dedicado a informar y concientizar
+                sobre la importancia de donar.
+            </p>
+
+        </article>
+
+        <!-- INSTAGRAM -->
+        <article class="comunidad-tarjeta">
+
+            <a
+                href="PEGAR_ENLACE_DE_INSTAGRAM"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="comunidad-circulo comunidad-instagram"
+                aria-label="Instagram">
+                📸
+            </a>
+
+            <h3>Seguinos en Instagram</h3>
+
+            <p>
+                Compartimos novedades, campañas y actividades
+                de nuestra comunidad.
+            </p>
+
+            <a
+                href="PEGAR_ENLACE_DE_INSTAGRAM"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="comunidad-boton">
+                Visitar Instagram →
+            </a>
+
+        </article>
+
+        <!-- CHATBOT -->
+        <article class="comunidad-tarjeta">
+
+            <div class="comunidad-circulo comunidad-robot">
+                🤖
+            </div>
+
+            <h3>Asistente virtual</h3>
+
+            <p>
+                Un espacio para resolver dudas y conocer más
+                sobre la donación de sangre y CPH.
+            </p>
+
+            <button
+                type="button"
+                class="comunidad-boton"
+                id="comunidadAbrirChat">
+                Iniciar conversación 💬
+            </button>
+
+            <div class="comunidad-chat" id="comunidadChat">
+
+                <div class="comunidad-chat-cabecera">
+                    <div>
+                        <strong>Asistente Dona Vida</strong>
+                        <small>● Asistente automático</small>
+                    </div>
+
+                    <button type="button" id="comunidadCerrarChat">
+                        ✕
+                    </button>
                 </div>
 
-                <h3>Nuestra identidad</h3>
-                <p>Una comunidad comprometida con la vida.</p>
+                <div
+                    class="comunidad-chat-mensajes"
+                    id="comunidadMensajes"
+                    aria-live="polite">
+
+                    <div class="comunidad-mensaje bot">
+                        ¡Hola! 👋 Bienvenido a Huanguelén Dona Vida.
+
+                        Estoy acá para orientarte sobre la donación de sangre y CPH.
+
+                        ¿Qué te gustaría saber?
+                    </div>
+
+                </div>
+
+                <div class="comunidad-preguntas">
+
+                    <button type="button" data-consulta="sangre">
+                        🩸 Donación de sangre
+                    </button>
+
+                    <button type="button" data-consulta="cph">
+                        ❤️ Donación de CPH
+                    </button>
+
+                    <button type="button" data-consulta="requisitos">
+                        🙋 Requisitos
+                    </button>
+
+                    <button type="button" data-consulta="contacto">
+                        📍 Dónde consultar
+                    </button>
+
+                </div>
+
+                <form class="comunidad-chat-form" id="comunidadFormulario">
+
+                    <input
+                        type="text"
+                        id="comunidadEntrada"
+                        placeholder="Escribí tu pregunta..."
+                        autocomplete="off"
+                        required>
+
+                    <button type="submit" aria-label="Enviar">
+                        ➤
+                    </button>
+
+                </form>
+
             </div>
 
-            <!-- INSTAGRAM -->
-            <div class="comunidad-card">
-                <a href="PEGAR_ENLACE_DE_INSTAGRAM_AQUI"
-                   target="_blank"
-                   class="comunidad-circulo instagram-circulo"
-                   aria-label="Visitar Instagram">
-                    <span>📸</span>
-                </a>
-
-                <h3>Seguinos en Instagram</h3>
-                <p>Encontrá novedades, campañas y actividades.</p>
-
-                <a class="comunidad-enlace"
-                   href="PEGAR_ENLACE_DE_INSTAGRAM_AQUI"
-                   target="_blank">
-                    Visitar Instagram →
-                </a>
-            </div>
-
-            <!-- CHATBOT -->
-            <div class="comunidad-card">
-                <a href="PEGAR_ENLACE_DEL_CHATBOT_AQUI"
-                   target="_blank"
-                   class="comunidad-circulo chatbot-circulo"
-                   aria-label="Abrir asistente virtual">
-                    <span>🤖</span>
-                </a>
-
-                <h3>Asistente virtual</h3>
-                <p>¿Tenés dudas? Nuestro asistente puede orientarte.</p>
-
-                <a class="comunidad-enlace"
-                   href="PEGAR_ENLACE_DEL_CHATBOT_AQUI"
-                   target="_blank">
-                    Hablar con el asistente →
-                </a>
-            </div>
-
-        </div>
-
-        <div class="comunidad-final">
-            <h3>Donar sangre es dar vida.</h3>
-            <p>Tu compromiso puede marcar la diferencia.</p>
-        </div>
+        </article>
 
     </div>
+
+    <div class="comunidad-final">
+        <h3>Donar sangre es dar vida. ❤️</h3>
+        <p>Un pequeño gesto puede significar una oportunidad para alguien más.</p>
+    </div>
+
+</div>
+
+<script>
+(() => {
+    const seccion = document.getElementById("comunidad");
+    if (!seccion) return;
+
+    const abrir = seccion.querySelector("#comunidadAbrirChat");
+    const cerrar = seccion.querySelector("#comunidadCerrarChat");
+    const chat = seccion.querySelector("#comunidadChat");
+    const mensajes = seccion.querySelector("#comunidadMensajes");
+    const formulario = seccion.querySelector("#comunidadFormulario");
+    const entrada = seccion.querySelector("#comunidadEntrada");
+
+    abrir.addEventListener("click", () => {
+        chat.classList.add("abierto");
+        abrir.textContent = "Conversación iniciada ✓";
+        entrada.focus();
+    });
+
+    cerrar.addEventListener("click", () => {
+        chat.classList.remove("abierto");
+        abrir.textContent = "Iniciar conversación 💬";
+    });
+
+    function agregarMensaje(texto, tipo) {
+        const elemento = document.createElement("div");
+        elemento.className = "comunidad-mensaje " + tipo;
+        elemento.textContent = texto;
+        mensajes.appendChild(elemento);
+        mensajes.scrollTop = mensajes.scrollHeight;
+    }
+
+    function obtenerRespuesta(texto) {
+        const pregunta = texto.toLowerCase();
+
+        if (pregunta.includes("cph") ||
+            pregunta.includes("médula") ||
+            pregunta.includes("progenitoras")) {
+            return "Las CPH son células progenitoras hematopoyéticas, capaces de dar origen a las células de la sangre. Su donación puede ayudar a pacientes que necesitan un trasplante. Para conocer el proceso de inscripción y los requisitos, consultá con los organismos oficiales de salud.";
+        }
+
+        if (pregunta.includes("sangre") ||
+            pregunta.includes("donar")) {
+            return "La donación de sangre es un acto voluntario y solidario. La sangre donada puede utilizarse en transfusiones y tratamientos médicos. Para conocer los lugares y horarios de donación, consultá con un banco de sangre o centro de salud.";
+        }
+
+        if (pregunta.includes("requisito") ||
+            pregunta.includes("edad") ||
+            pregunta.includes("puede")) {
+            return "Los requisitos para donar dependen del tipo de donación y de las normas sanitarias vigentes. Un equipo de salud debe evaluar cada caso y confirmar si la persona puede donar.";
+        }
+
+        if (pregunta.includes("contacto") ||
+            pregunta.includes("dónde") ||
+            pregunta.includes("lugar") ||
+            pregunta.includes("información")) {
+            return "Podés acercarte a un hospital, centro de salud o banco de sangre de tu zona. También podés consultar los canales oficiales de los organismos de salud para obtener información actualizada.";
+        }
+
+        if (pregunta.includes("hola") ||
+            pregunta.includes("buenas")) {
+            return "¡Hola! ❤️ Gracias por visitar Huanguelén Dona Vida. Estoy acá para ayudarte. Podés preguntarme sobre sangre, CPH o requisitos para donar.";
+        }
+
+        if (pregunta.includes("gracias")) {
+            return "¡De nada! ❤️ Gracias por interesarte en la donación y ayudar a difundir este mensaje.";
+        }
+
+        return "¡Gracias por escribir! Todavía no tengo una respuesta específica para esa consulta. Te recomiendo comunicarte con un centro de salud o banco de sangre para recibir información confiable.";
+    }
+
+    function enviar(texto) {
+        const consulta = texto.trim();
+        if (!consulta) return;
+
+        agregarMensaje(consulta, "usuario");
+
+        setTimeout(() => {
+            agregarMensaje(obtenerRespuesta(consulta), "bot");
+        }, 350);
+    }
+
+    formulario.addEventListener("submit", evento => {
+        evento.preventDefault();
+        enviar(entrada.value);
+        entrada.value = "";
+    });
+
+    seccion.querySelectorAll("[data-consulta]").forEach(boton => {
+        boton.addEventListener("click", () => {
+            const consultas = {
+                sangre: "¿Qué es la donación de sangre?",
+                cph: "¿Qué es la donación de CPH?",
+                requisitos: "¿Cuáles son los requisitos para donar?",
+                contacto: "¿Dónde puedo consultar?"
+            };
+
+            enviar(consultas[boton.dataset.consulta]);
+        });
+    });
+})();
+</script>
+
 </section>
 
 <style>
